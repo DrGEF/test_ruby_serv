@@ -1,0 +1,9 @@
+<% if notice %>
+<p id="notice"><%= notice%></p>
+<% end %>
+<% if @cart.line_items.any? %>
+	<%= render @cart %>
+<% else %>
+	<h2>Ваша корзина пуста :(</h2>
+	<p>Можно в нее что-нибудь <%= link_to "добавить", store_path %></p>
+<% end %>		

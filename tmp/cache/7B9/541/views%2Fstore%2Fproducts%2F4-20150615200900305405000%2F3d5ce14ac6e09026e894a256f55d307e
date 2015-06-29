@@ -1,0 +1,48 @@
+o: ActiveSupport::Cache::Entry:@valueI"�
+		<div class="entry">
+			<img src="/assets/ruby-23da9c824d8d0697f78aea97d574f131.jpg" alt="Ruby" />
+			<h3>Еще один тестовый товар</h3><div class="date">15-06-2015 20:08</div>
+			
+        <p>
+            Some description of this item... Its can be very long about two line... Or not...
+        </p>
+    
+			<div class="price_line">
+				<span class="price">349.99 руб.</span>
+				<form class="button_to" method="post" action="/line_items?product_id=1" data-remote="true"><input type="submit" value="Добавить в корзину" /><input type="hidden" name="authenticity_token" value="6rHy1ZwB/2TD3djgPJ8yRi3z3e/hCqoA/QqjGXExQN7AYYEUYoTkLDKWP+Qoi8Sz8qq1G7twHW0BG3SuhtqqDg==" /></form>
+			</div>
+		</div>
+		<div class="entry">
+			<img src="/assets/ruby-23da9c824d8d0697f78aea97d574f131.jpg" alt="Ruby" />
+			<h3>Самый первый товар</h3><div class="date">15-06-2015 20:09</div>
+			<p>
+        Описание товара... Длинное длинное...
+    </p>
+			<div class="price_line">
+				<span class="price">99.99 руб.</span>
+				<form class="button_to" method="post" action="/line_items?product_id=2" data-remote="true"><input type="submit" value="Добавить в корзину" /><input type="hidden" name="authenticity_token" value="fW8FZo8ickybX6W9uFC+qsC79H/uR5FF+ZEFSvuFBOJXv3ancadpBGoUQrmsREhfH+Kci7Q9JigFgNL9DG7uMg==" /></form>
+			</div>
+		</div>
+		<div class="entry">
+			<img src="/assets/ruby-23da9c824d8d0697f78aea97d574f131.jpg" alt="Ruby" />
+			<h3>Другой заголовок</h3><div class="date">15-06-2015 20:09</div>
+			<p>
+        Описание товара... Длинное длинное...
+    </p>
+			<div class="price_line">
+				<span class="price">99.99 руб.</span>
+				<form class="button_to" method="post" action="/line_items?product_id=3" data-remote="true"><input type="submit" value="Добавить в корзину" /><input type="hidden" name="authenticity_token" value="WBI54ZEq3TPnHfFDwMYpFyz47FR0iQ8R4KMKbCM8FCBywkogb6/GexZWFkfU0t/i86GEoC7zuHwcst3b1Nf+8A==" /></form>
+			</div>
+		</div>
+		<div class="entry">
+			<img src="/assets/ruby-23da9c824d8d0697f78aea97d574f131.jpg" alt="Ruby" />
+			<h3>Совсем другой заголовок</h3><div class="date">15-06-2015 20:09</div>
+			<p>
+        Описание товара... Длинное длинное...
+    </p>
+			<div class="price_line">
+				<span class="price">99.99 руб.</span>
+				<form class="button_to" method="post" action="/line_items?product_id=4" data-remote="true"><input type="submit" value="Добавить в корзину" /><input type="hidden" name="authenticity_token" value="5C0bCnLrjTSfT4PHJ39SmdV4IgOeNrLI4W6PA/hbomPO/WjLjG6WfG4EZMMza6RsCiFK98RMBaUdf1i0D7BIsw==" /></form>
+			</div>
+		</div>
+:ET:@created_atf1434398948.491254:@expires_in0

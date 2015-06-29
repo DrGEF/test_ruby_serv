@@ -1,0 +1,10 @@
+<h3>Вы заказали</h3>
+<p>Мы получили ваш заказ. Вы заказали:</p>
+<table>
+	<tr>
+		<th colspan="2">К-во</th>
+		<th>Описание</th>
+		<% @mail = true %>
+		<%= render @order.line_items, object: @mail%>
+	</tr>
+</table>

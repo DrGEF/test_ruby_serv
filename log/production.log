@@ -1,0 +1,37 @@
+D, [2015-06-24T01:24:44.752933 #10698] DEBUG -- :   [1m[36m (381.2ms)[0m  [1mCREATE TABLE `carts` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+D, [2015-06-24T01:24:44.837082 #10698] DEBUG -- :   [1m[35m (82.2ms)[0m  CREATE TABLE `line_items` (`id` int(11) auto_increment PRIMARY KEY, `product_id` int(11), `cart_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `quantity` int(11) DEFAULT 1, `order_id` int(11)) ENGINE=InnoDB
+D, [2015-06-24T01:24:44.994360 #10698] DEBUG -- :   [1m[36m (155.7ms)[0m  [1mCREATE  INDEX `index_line_items_on_cart_id`  ON `line_items` (`cart_id`) [0m
+D, [2015-06-24T01:24:45.163632 #10698] DEBUG -- :   [1m[35m (167.8ms)[0m  CREATE  INDEX `index_line_items_on_order_id`  ON `line_items` (`order_id`) 
+D, [2015-06-24T01:24:45.356788 #10698] DEBUG -- :   [1m[36m (191.7ms)[0m  [1mCREATE  INDEX `index_line_items_on_product_id`  ON `line_items` (`product_id`) [0m
+D, [2015-06-24T01:24:45.611410 #10698] DEBUG -- :   [1m[35m (253.3ms)[0m  CREATE TABLE `orders` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `address` text, `email` varchar(255), `pay_type` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+D, [2015-06-24T01:24:45.707915 #10698] DEBUG -- :   [1m[36m (95.3ms)[0m  [1mCREATE TABLE `products` (`id` int(11) auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `image_url` varchar(255), `price` decimal(8,2), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+D, [2015-06-24T01:24:45.804511 #10698] DEBUG -- :   [1m[35m (95.3ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `password_digest` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+D, [2015-06-24T01:24:45.985348 #10698] DEBUG -- :   [1m[36m (117.7ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+D, [2015-06-24T01:24:46.274719 #10698] DEBUG -- :   [1m[35m (288.3ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+D, [2015-06-24T01:24:46.275338 #10698] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+D, [2015-06-24T01:24:46.335098 #10698] DEBUG -- :   [1m[35m (59.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150615200154')
+D, [2015-06-24T01:24:46.371215 #10698] DEBUG -- :   [1m[36m (35.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150308191545')[0m
+D, [2015-06-24T01:24:46.407400 #10698] DEBUG -- :   [1m[35m (36.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150302193958')
+D, [2015-06-24T01:24:46.443613 #10698] DEBUG -- :   [1m[36m (36.1ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150513114100')[0m
+D, [2015-06-24T01:24:46.479757 #10698] DEBUG -- :   [1m[35m (36.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150103100346')
+D, [2015-06-24T01:24:46.515996 #10698] DEBUG -- :   [1m[36m (36.1ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150513113926')[0m
+D, [2015-06-24T01:24:46.552125 #10698] DEBUG -- :   [1m[35m (36.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150308200117')
+D, [2015-06-24T01:24:46.600336 #10698] DEBUG -- :   [1m[36m (48.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150301194253')[0m
+D, [2015-06-24T01:24:46.604309 #10698] DEBUG -- :   [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+D, [2015-06-24T01:24:46.656625 #10698] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `products`[0m
+D, [2015-06-24T01:24:46.664860 #10698] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-06-24T01:24:46.756609 #10698] DEBUG -- :   [1m[36mProduct Exists (70.0ms)[0m  [1mSELECT  1 AS one FROM `products` WHERE `products`.`title` = BINARY 'Еще один тестовый товар' LIMIT 1[0m
+D, [2015-06-24T01:24:46.758966 #10698] DEBUG -- :   [1m[35mSQL (0.7ms)[0m  INSERT INTO `products` (`title`, `description`, `image_url`, `price`, `created_at`, `updated_at`) VALUES ('Еще один тестовый товар', '\n        <p>\n            Some description of this item... Its can be very long about two line... Or not...\n        </p>\n    ', 'ruby.jpg', 349.99, '2015-06-23 22:24:46.756967', '2015-06-23 22:24:46.756967')
+D, [2015-06-24T01:24:46.793260 #10698] DEBUG -- :   [1m[36m (33.6ms)[0m  [1mCOMMIT[0m
+D, [2015-06-24T01:24:46.794453 #10698] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-06-24T01:24:46.795736 #10698] DEBUG -- :   [1m[36mProduct Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `products` WHERE `products`.`title` = BINARY 'Самый первый товар' LIMIT 1[0m
+D, [2015-06-24T01:24:46.796913 #10698] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO `products` (`title`, `description`, `image_url`, `price`, `created_at`, `updated_at`) VALUES ('Самый первый товар', '<p>\n        Описание товара... Длинное длинное...\n    </p>', 'ruby.jpg', 99.99, '2015-06-23 22:24:46.795895', '2015-06-23 22:24:46.795895')
+D, [2015-06-24T01:24:46.829407 #10698] DEBUG -- :   [1m[36m (32.0ms)[0m  [1mCOMMIT[0m
+D, [2015-06-24T01:24:46.830235 #10698] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-06-24T01:24:46.831173 #10698] DEBUG -- :   [1m[36mProduct Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `products` WHERE `products`.`title` = BINARY 'Другой заголовок' LIMIT 1[0m
+D, [2015-06-24T01:24:46.850700 #10698] DEBUG -- :   [1m[35mSQL (18.5ms)[0m  INSERT INTO `products` (`title`, `description`, `image_url`, `price`, `created_at`, `updated_at`) VALUES ('Другой заголовок', '<p>\n        Описание товара... Длинное длинное...\n    </p>', 'ruby.jpg', 99.99, '2015-06-23 22:24:46.831333', '2015-06-23 22:24:46.831333')
+D, [2015-06-24T01:24:46.889611 #10698] DEBUG -- :   [1m[36m (38.3ms)[0m  [1mCOMMIT[0m
+D, [2015-06-24T01:24:46.890704 #10698] DEBUG -- :   [1m[35m (0.2ms)[0m  BEGIN
+D, [2015-06-24T01:24:46.891954 #10698] DEBUG -- :   [1m[36mProduct Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `products` WHERE `products`.`title` = BINARY 'Совсем другой заголовок' LIMIT 1[0m
+D, [2015-06-24T01:24:46.893466 #10698] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO `products` (`title`, `description`, `image_url`, `price`, `created_at`, `updated_at`) VALUES ('Совсем другой заголовок', '<p>\n        Описание товара... Длинное длинное...\n    </p>', 'ruby.jpg', 99.99, '2015-06-23 22:24:46.892154', '2015-06-23 22:24:46.892154')
+D, [2015-06-24T01:24:46.949741 #10698] DEBUG -- :   [1m[36m (55.7ms)[0m  [1mCOMMIT[0m

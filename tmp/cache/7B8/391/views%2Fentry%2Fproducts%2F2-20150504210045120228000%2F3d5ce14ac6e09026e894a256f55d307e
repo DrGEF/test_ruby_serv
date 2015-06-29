@@ -1,0 +1,12 @@
+o: ActiveSupport::Cache::Entry:@valueI"�		<div class="entry">
+			<img src="/assets/ruby-23da9c824d8d0697f78aea97d574f131.jpg" alt="Ruby" />
+			<h3>Самый первый товар</h3><div class="date">04-05-2015 21:00</div>
+			<p>
+        Описание товара... Длинное длинное...
+    </p>
+			<div class="price_line">
+				<span class="price">99.99 руб.</span>
+				<form class="button_to" method="post" action="/line_items?product_id=2" data-remote="true"><input type="submit" value="Добавить в корзину" /><input type="hidden" name="authenticity_token" value="VlDT/0nvKfR44TaVCyLySxoBBt4JCi4DPMq0VwfwSn18gKA+t2oyvImq0ZEfNgS+xVhuKlNwmW7A22Pg8BugrQ==" /></form>
+			</div>
+		</div>
+:ET:@created_atf1430773313.5861294:@expires_in0

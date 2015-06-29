@@ -1,0 +1,5 @@
+// $('#current_item').css({'background-color':'#114411'}).animate({'background-color':'#88ff88'},1000);
+if ($('#cart tr.item').length == 0) { 
+	$('#cart').hide('slow');
+}
+$('#cart').html("<%= escape_javascript render @cart %>")
