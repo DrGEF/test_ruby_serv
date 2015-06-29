@@ -10,7 +10,7 @@ set :rvm_ruby_string, 'ruby-2.2.0'
 require 'rvm/capistrano'
 
 set :repository,  "#{url}/#{application}.git"
-set :deploy_to, "home/#{nik}/srv/ruby/"
+set :deploy_to, "workspace/srv/ruby/"
 
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
@@ -38,6 +38,10 @@ namespace :deploy do
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+  end
+  desc "reload seed data on the server"
+  task :seed do
+  	run "cd #{current_path}; rake db:seed RAILS_ENV=#{rails_env}" 
   end
 end
 
