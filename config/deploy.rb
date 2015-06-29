@@ -3,7 +3,7 @@ require "bundler/capistrano"
 set :user, 'nik'
 set :domain, "site.loc"
 set :application, 'test_ruby_serv'
-set :url, "https://github.com/DrGEF/"
+set :url, "https://github.com/DrGEF"
 
 set :rvm_type, :user
 set :rvm_ruby_string, 'ruby-2.2.0'
